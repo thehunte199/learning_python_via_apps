@@ -8,7 +8,7 @@ websites = ["www.facebook.com", "facebook.com", "www.youtube.com", "youtube.com"
 currently_worktime = None
 
 while True:
-    if dt(dt.now().year, dt.now().month, dt.now().day, 8) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 12):
+    if dt(dt.now().year, dt.now().month, dt.now().day, 8) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 16):
         if currently_worktime == False or currently_worktime == None:
             currently_worktime = True
             with open(hosts_path, 'r+') as file:
@@ -29,4 +29,4 @@ while True:
                     if not any(website in line for website in websites):
                         file.write(line)
                 file.truncate()
-    time.sleep(2.5)
+    time.sleep(60)
